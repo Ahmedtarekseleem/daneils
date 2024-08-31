@@ -1,0 +1,31 @@
+
+
+  nav ul li a::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    left: 0;
+    right: 0;
+    height: 0.125rem;
+    bottom: -0.125rem;
+    transition: all 0.5s;
+    visibility: hidden;
+  }
+  body:has(.active.nav-link.home) a::before {
+    background-color: #fff;
+  }
+  body:has(.active.nav-link) a::before {
+    background-color: #000;
+  }
+  
+  
+  @media (min-width: 62rem) {
+    nav ul a:hover::before {
+      visibility: visible;
+      width: 100%;
+    }
+    .active::before {
+      visibility: visible;
+      width: 100%;
+    }
+  }
